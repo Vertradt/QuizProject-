@@ -13,7 +13,7 @@ public class QuizAplikacja {
         System.out.println(pytanie.zwrocWszystkie());
         // TODO: Podepnij lokalne repo do zdalnego (git remote) i zrób gitIgnore (Maven, Java, Inelij + all)
         //  Losowe pytanie
-        //  Menu.menu();
+        //  Menu.menuQuizu();
         //  poczytaj o Dao i Mavenie,
         //  zainstaluj Mavena i Jave
 

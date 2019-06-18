@@ -1,6 +1,10 @@
-public class Quiz {
+import java.util.Scanner;
 
-    public void start() {
-//        new Menu().uruchom();
+class Quiz {
+
+    void start() {
+        Scanner scanner = new Scanner(System.in);
+        Wejscie wejscie = new Wejscie(scanner);
+        new Menu().uruchom();
     }
 }

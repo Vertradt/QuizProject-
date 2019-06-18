@@ -2,6 +2,8 @@ import qa.Dao;
 import qa.Pytanie;
 import qa.PytanieDao;
 
+import java.util.Scanner;
+
 public class QuizAplikacja {
 
     public static void main(String[] args) {
@@ -14,6 +16,8 @@ public class QuizAplikacja {
         //  Menu.menu();
         //  poczytaj o Dao i Mavenie,
         //  zainstaluj Mavena i Jave
+
+        new Quiz().start();
 
     }
 }

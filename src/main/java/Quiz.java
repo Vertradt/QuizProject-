@@ -1,10 +1,18 @@
+import qa.Dao;
+import qa.PytanieIOdpowiedz;
+
 import java.util.Scanner;
 
 class Quiz {
 
+    private Dao<PytanieIOdpowiedz> pytanieIOdpowiedzDao;
+
+    public Quiz(Dao<PytanieIOdpowiedz> pytanieIOdpowiedzDao) {
+
+        this.pytanieIOdpowiedzDao = pytanieIOdpowiedzDao;
+    }
+
     void start() {
-        Scanner scanner = new Scanner(System.in);
-        Wejscie wejscie = new Wejscie(scanner);
-        new Menu().menuQuizu();
+        new Menu(new Wejscie(new Scanner(System.in))).menuQuizu(pytanieIOdpowiedzDao);
     }
 }

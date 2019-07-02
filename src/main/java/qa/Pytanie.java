@@ -6,4 +6,9 @@ public class Pytanie {
     public Pytanie(String tresc) {
         this.tresc = tresc;
     }
+
+    @Override
+    public String toString() {
+        return tresc;
+    }
 }

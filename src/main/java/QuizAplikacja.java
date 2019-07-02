@@ -1,23 +1,11 @@
-import qa.Dao;
-import qa.Pytanie;
-import qa.PytanieDao;
+import qa.*;
 
-import java.util.Scanner;
+import java.util.List;
 
 public class QuizAplikacja {
 
     public static void main(String[] args) {
-//        Quiz quiz = new Quiz();
-//        quiz.start();
-        Dao<Pytanie> pytanie = new PytanieDao();
-        System.out.println(pytanie.zwrocWszystkie());
-        // TODO: Podepnij lokalne repo do zdalnego (git remote) i zrób gitIgnore (Maven, Java, Inelij + all)
-        //  Losowe pytanie
-        //  Menu.menuQuizu();
-        //  poczytaj o Dao i Mavenie,
-        //  zainstaluj Mavena i Jave
-
-        new Quiz().start();
-
+        Dao<PytanieIOdpowiedz> pytanieIOdpowiedzDao = new PytanieIOdpowiedzDao();
+        new Quiz(pytanieIOdpowiedzDao).start();
     }
 }

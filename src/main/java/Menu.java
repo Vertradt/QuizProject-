@@ -1,34 +1,33 @@
+import qa.Dao;
+import qa.PytanieIOdpowiedz;
+
 class Menu {
-    //TODO: Tutaj będzie wybranie opcja włączenia gry, 2 - wybór języka, 3 - punktacja, 4 - wyjście
-//
-//     private Scanner scanner;
-//
-//    Menu(Scanner scanner){
-//        this.scanner = scanner;
-//    }
-    static void menuQuizu() {
-        int menuId = Wejscie.getId();
+    private Wejscie wejscie;
+
+    public Menu(Wejscie wejscie) {
+        this.wejscie = wejscie;
+    }
+
+    void menuQuizu(Dao<PytanieIOdpowiedz> pytanieIOdpowiedzDao) {
+        Komunikaty.wyswietlKomunikat("Wybierz pozycje z menu Quizu");
+        Wyswietlacz.wyświetlacz();
+        int menuId = wejscie.getInput();
 
         switch (menuId) {
             case (1):
-                WlaczenieQuizu.wlacznieQuizu();
-                menuQuizu();
+                new WlaczenieQuizu().wlacznieQuizu(pytanieIOdpowiedzDao.weźLosowe());
+                menuQuizu(pytanieIOdpowiedzDao);
                 break;
             case (2):
-                WyborJezyka.wyborJezyka();
-                menuQuizu();
+                new Punktacja().tablicaWynikow();
+                menuQuizu(pytanieIOdpowiedzDao);
                 break;
             case (3):
-                Puntacja.tablicaWynikow();
-                menuQuizu();
-                break;
-            case (4):
-                QuizStop.zakonczenieDzialaniaAplikacji();
-                menuQuizu();
+                new QuizStop().zakonczenieDzialaniaAplikacji();
                 break;
             default:
-                System.out.println("Nie wybrano żadnej opcji");
-                menuQuizu();
+                Komunikaty.wyswietlKomunikat("Nie wybrano żadnej opcji");
+                menuQuizu(pytanieIOdpowiedzDao);
         }
     }
 }

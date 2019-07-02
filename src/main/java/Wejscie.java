@@ -1,16 +1,15 @@
 import java.util.Scanner;
 
 public class Wejscie {
-    private static Scanner scanner;
+    private Scanner scanner;
 
-    Wejscie(Scanner scanner){
+    public Wejscie(Scanner scanner) {
         this.scanner = scanner;
     }
 
-        static int getId() {
-        Wyswietlacz.wyswietla();
+    int getInput() {
 
-        int odpowiedzUzytownika = scanner.nextInt();
-        return odpowiedzUzytownika;
+        return scanner.nextInt();
     }
+
 }

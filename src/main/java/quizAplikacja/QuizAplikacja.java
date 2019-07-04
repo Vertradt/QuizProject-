@@ -1,6 +1,8 @@
-import qa.*;
+package quizAplikacja;
 
-import java.util.List;
+import quizAplikacja.qa.Dao;
+import quizAplikacja.qa.PytanieIOdpowiedz;
+import quizAplikacja.qa.PytanieIOdpowiedzDao;
 
 public class QuizAplikacja {
 

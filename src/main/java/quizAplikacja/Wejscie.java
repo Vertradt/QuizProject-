@@ -1,3 +1,5 @@
+package quizAplikacja;
+
 import java.util.Scanner;
 
 public class Wejscie {
@@ -7,9 +9,12 @@ public class Wejscie {
         this.scanner = scanner;
     }
 
-    int getInput() {
-
+    public int getIntInput() {
         return scanner.nextInt();
+    }
+
+     public String getStringInput() {
+        return scanner.nextLine();
     }
 
 }

@@ -1,4 +1,4 @@
-package qa;
+package quizAplikacja.qa;
 
 import java.util.List;
 public interface Dao<T>{

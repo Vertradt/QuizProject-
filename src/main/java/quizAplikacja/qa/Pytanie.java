@@ -1,4 +1,4 @@
-package qa;
+package quizAplikacja.qa;
 
 public class Pytanie {
     private String tresc;

@@ -1,5 +1,7 @@
-import qa.Dao;
-import qa.PytanieIOdpowiedz;
+package quizAplikacja;
+
+import quizAplikacja.qa.Dao;
+import quizAplikacja.qa.PytanieIOdpowiedz;
 
 class Menu {
     private Wejscie wejscie;
@@ -11,7 +13,7 @@ class Menu {
     void menuQuizu(Dao<PytanieIOdpowiedz> pytanieIOdpowiedzDao) {
         Komunikaty.wyswietlKomunikat("Wybierz pozycje z menu Quizu");
         Wyswietlacz.wyświetlacz();
-        int menuId = wejscie.getInput();
+        int menuId = wejscie.getIntInput();
 
         switch (menuId) {
             case (1):
@@ -30,4 +32,6 @@ class Menu {
                 menuQuizu(pytanieIOdpowiedzDao);
         }
     }
+
+
 }

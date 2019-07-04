@@ -1,5 +1,7 @@
-import qa.Dao;
-import qa.PytanieIOdpowiedz;
+package quizAplikacja;
+
+import quizAplikacja.qa.Dao;
+import quizAplikacja.qa.PytanieIOdpowiedz;
 
 import java.util.Scanner;
 

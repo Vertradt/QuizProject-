@@ -1,4 +1,4 @@
-package qa;
+package quizAplikacja.qa;
 
 import java.util.ArrayList;
 import java.util.List;

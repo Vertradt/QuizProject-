@@ -1,19 +1,18 @@
 package quizAplikacja;
 
-import quizAplikacja.qa.OdpowiedzUzytkownika;
 import quizAplikacja.qa.PytanieIOdpowiedz;
 
 class WlaczenieQuizu {
-    private static OdpowiedzUzytkownika odpowiedzUzytkownika;
+    private Wejscie wejscie;
 
-     WlaczenieQuizu(OdpowiedzUzytkownika odpowiedzUzytkownika) {
-        this.odpowiedzUzytkownika = odpowiedzUzytkownika;
+    WlaczenieQuizu(Wejscie wejscie) {
+        this.wejscie = wejscie;
     }
 
     void wlacznieQuizu(PytanieIOdpowiedz pytanieIOdpowiedz) {
         System.out.println("Quiz został uruchomiony");
         System.out.println(pytanieIOdpowiedz);
-        odpowiedzUzytkownika.wprowadzanieOdpowiedzi();
+        wejscie.getStringInput();
     }
 
     @Override

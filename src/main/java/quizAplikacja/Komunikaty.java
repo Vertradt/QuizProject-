@@ -1,7 +1,7 @@
 package quizAplikacja;
 
-class Komunikaty {
-    static void wyswietlKomunikat(String komunikat) {
+public class Komunikaty {
+     static void wyswietlKomunikat(String komunikat) {
         System.out.println(komunikat);
     }
 }

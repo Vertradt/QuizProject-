@@ -18,7 +18,7 @@ public class PytanieDao implements Dao<Pytanie> {
     }
 
     @Override
-    public Pytanie weźLosowe() {
+    public Pytanie wezLosowe() {
         return null; //TODO: Zwróć losowe pytanie z listy pytań
     }
 

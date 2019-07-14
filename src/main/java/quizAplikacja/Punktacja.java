@@ -1,6 +1,6 @@
 package quizAplikacja;
 
-public class Punktacja {
+class Punktacja {
     void tablicaWynikow() {
         System.out.println("Tablica wyników");
     }

@@ -9,7 +9,7 @@ class Quiz {
 
     private Dao<PytanieIOdpowiedz> pytanieIOdpowiedzDao;
 
-    public Quiz(Dao<PytanieIOdpowiedz> pytanieIOdpowiedzDao) {
+    Quiz(Dao<PytanieIOdpowiedz> pytanieIOdpowiedzDao) {
 
         this.pytanieIOdpowiedzDao = pytanieIOdpowiedzDao;
     }

@@ -1,5 +1,6 @@
 package quizAplikacja.qa;
 
+import quizAplikacja.Komunikaty;
 import quizAplikacja.Wejscie;
 
 public class OdpowiedzUzytkownika {
@@ -11,7 +12,7 @@ public class OdpowiedzUzytkownika {
     }
 
     public void sprawdzenieOdpowiedzi() {
-        System.out.println("Czy wiedziałeś o tym?");
+        new Komunikaty().wyswietlKomunikat("Czy wiedziałeś o tym?");
         String odpowiedz = wejscie.getStringInput();
         String odpowiedzPoprawna = "tak";
         String odpowiedzNiepoprawna = "nie";
@@ -19,11 +20,11 @@ public class OdpowiedzUzytkownika {
         boolean porownanieDlaPoprawnej = odpowiedz.equals(odpowiedzPoprawna);
         boolean porownianieDlaNiepoprawnej = odpowiedz.equals(odpowiedzNiepoprawna);
 
-        if (porownanieDlaPoprawnej) System.out.println("Poprawna odpowiedź");
+        if (porownanieDlaPoprawnej) new Komunikaty().wyswietlKomunikat("Poprawna odpowiedź");
         else if (!porownianieDlaNiepoprawnej) {
-            System.out.println("nie podano odp");
+            new Komunikaty().wyswietlKomunikat("Poprawna odpowiedź");
         } else {
-            System.out.println("Zła odpowiedź. Czy chcesz grać dalej?");
+            new Komunikaty().wyswietlKomunikat("Zła odpowiedź. Czy chcesz grać dalej?");
         }
 
 

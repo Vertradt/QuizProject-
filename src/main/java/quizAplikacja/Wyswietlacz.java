@@ -3,8 +3,8 @@ package quizAplikacja;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Wyswietlacz {
-    public static void wyświetlacz() {
+class Wyswietlacz {
+    static void wyswietlacz() {
 
         Map<Integer, String> pozycjeMenu = new HashMap<>();
         pozycjeMenu.put(1, "Włącznie Quizu");

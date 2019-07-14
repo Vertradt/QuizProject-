@@ -7,18 +7,18 @@ import quizAplikacja.qa.PytanieIOdpowiedz;
 class Menu {
     private Wejscie wejscie;
 
-    public Menu(Wejscie wejscie) {
+    Menu(Wejscie wejscie) {
         this.wejscie = wejscie;
     }
 
     void menuQuizu(Dao<PytanieIOdpowiedz> pytanieIOdpowiedzDao) {
-        Komunikaty.wyswietlKomunikat("Wybierz pozycje z menu Quizu");
-        Wyswietlacz.wyświetlacz();
+        new Komunikaty().wyswietlKomunikat("Wybierz pozycje z menu Quizu");
+        Wyswietlacz.wyswietlacz();
         int menuId = wejscie.getIntInput();
 
         switch (menuId) {
             case (1):
-                new WlaczenieQuizu(wejscie).wlacznieQuizu(pytanieIOdpowiedzDao.weźLosowe());
+                new WlaczenieQuizu(wejscie).wlacznieQuizu(pytanieIOdpowiedzDao.wezLosowe());
                 new OdpowiedzUzytkownika(wejscie).sprawdzenieOdpowiedzi();
                 menuQuizu(pytanieIOdpowiedzDao);
                 break;
@@ -30,7 +30,7 @@ class Menu {
                 new QuizStop().zakonczenieDzialaniaAplikacji();
                 break;
             default:
-                Komunikaty.wyswietlKomunikat("Nie wybrano żadnej opcji");
+                new Komunikaty().wyswietlKomunikat("Nie wybrano żadnej opcji");
                 menuQuizu(pytanieIOdpowiedzDao);
         }
     }

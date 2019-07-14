@@ -12,7 +12,7 @@ public class PytanieIOdpowiedzDao implements Dao<PytanieIOdpowiedz> {
     }
 
     @Override
-    public PytanieIOdpowiedz weźLosowe() {
+    public PytanieIOdpowiedz wezLosowe() {
         Random rand = new Random();
         return listaPytanIOdpowiedzi.get(rand.nextInt(listaPytanIOdpowiedzi.size()));
     }

@@ -1,5 +1,6 @@
 package quizAplikacja;
 
+import quizAplikacja.qa.OdpowiedzUzytkownika;
 import quizAplikacja.qa.PytanieIOdpowiedz;
 
 class WlaczenieQuizu {
@@ -10,9 +11,12 @@ class WlaczenieQuizu {
     }
 
     void wlacznieQuizu(PytanieIOdpowiedz pytanieIOdpowiedz) {
-        System.out.println("Quiz został uruchomiony");
-        System.out.println(pytanieIOdpowiedz);
-        wejscie.getStringInput();
+        wejscie.getStringInput(); //TODO: Zostawiłem tutaj ten input i dodałem poniżej pętle, wcześniej była
+                                  // umieszczona bezpośrednio w klasie Menu, w pierwszyma casie. Nie wiem czy to dobre rozwiąznie
+        while (true) {
+            new OdpowiedzUzytkownika(pytanieIOdpowiedz, wejscie).sprawdzenieOdpowiedzi(pytanieIOdpowiedz);
+            new LicznikPunktow(new OdpowiedzUzytkownika(pytanieIOdpowiedz, wejscie)).punkty();
+        }
     }
 
     @Override

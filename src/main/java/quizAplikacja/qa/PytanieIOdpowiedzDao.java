@@ -25,11 +25,11 @@ public class PytanieIOdpowiedzDao implements Dao<PytanieIOdpowiedz> {
     private List<PytanieIOdpowiedz> inicjalizacja() {
         List<PytanieIOdpowiedz> pytaniaIOdpowiedzi = new ArrayList<>();
         pytaniaIOdpowiedzi.add(new PytanieIOdpowiedz(1, new Pytanie("Czy w skład JRE wchodzą Maszyna Wirtualna Javy-JVM, oraz zbiór klas i narzędzi wymaganych do uruchomienia aplikacji w JAVIE?"), new Odpowiedź("tak")));
-//        pytaniaIOdpowiedzi.add(new PytanieIOdpowiedz(2, new Pytanie("Czy JDK to środowisko uruchomieniowe Javy oraz zestaw narzędzi do tworzenia i kompilowaniu kodu w JAVIE."), new Odpowiedź("Tak")));
-//        pytaniaIOdpowiedzi.add(new PytanieIOdpowiedz(4, new Pytanie("Czy niebędące obiektami dane prymitywne, na których operuje się bezpośrednio świadczą o tym, że JAVA jest w 100% obiektowa?"), new Odpowiedź("Nie")));
-//        pytaniaIOdpowiedzi.add(new PytanieIOdpowiedz(5, new Pytanie("Czy konstruktor jest uruchamiany za pomocą słówka 'new' podczas tworzenia nowego obiektu?"), new Odpowiedź("Tak")));
-//        pytaniaIOdpowiedzi.add(new PytanieIOdpowiedz(6, new Pytanie("Czy konstruktor, tak jak metoda zwraca i deklaruje typ zwracany?"), new Odpowiedź("Nie")));
-//        pytaniaIOdpowiedzi.add(new PytanieIOdpowiedz(7, new Pytanie("Czy prawdą jest, że nazwa konstruktora nie musi być taka sama jak nazwa klasy, w której się znajduje?"), new Odpowiedź("Nie")));
+        pytaniaIOdpowiedzi.add(new PytanieIOdpowiedz(2, new Pytanie("Czy JDK to środowisko uruchomieniowe Javy oraz zestaw narzędzi do tworzenia i kompilowaniu kodu w JAVIE."), new Odpowiedź("Tak")));
+        pytaniaIOdpowiedzi.add(new PytanieIOdpowiedz(4, new Pytanie("Czy niebędące obiektami dane prymitywne, na których operuje się bezpośrednio świadczą o tym, że JAVA jest w 100% obiektowa?"), new Odpowiedź("Nie")));
+        pytaniaIOdpowiedzi.add(new PytanieIOdpowiedz(5, new Pytanie("Czy konstruktor jest uruchamiany za pomocą słówka 'new' podczas tworzenia nowego obiektu?"), new Odpowiedź("Tak")));
+        pytaniaIOdpowiedzi.add(new PytanieIOdpowiedz(6, new Pytanie("Czy konstruktor, tak jak metoda zwraca i deklaruje typ zwracany?"), new Odpowiedź("Nie")));
+        pytaniaIOdpowiedzi.add(new PytanieIOdpowiedz(7, new Pytanie("Czy prawdą jest, że nazwa konstruktora nie musi być taka sama jak nazwa klasy, w której się znajduje?"), new Odpowiedź("Nie")));
 //        pytaniaIOdpowiedzi.add(new PytanieIOdpowiedz(3, new Pytanie("Czy JVM to maszyna wirtualna i środowisko wykonawcze JAVY."), new Odpowiedź("Tak")));
 //        pytaniaIOdpowiedzi.add(new PytanieIOdpowiedz(8, new Pytanie("Czy JAVA tworzy konstruktor domyślny jeśli nie zrobi tego programista."), new Odpowiedź("Tak")));
 //        pytaniaIOdpowiedzi.add(new PytanieIOdpowiedz(9, new Pytanie("Czy przeciązanie 'overloading' polega na posiadaniu przez wiele metod tych samych nazw, lecz o różnej sygnaturze."), new Odpowiedź("Tak")));

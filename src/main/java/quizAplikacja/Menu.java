@@ -1,7 +1,6 @@
 package quizAplikacja;
 
 import quizAplikacja.qa.Dao;
-import quizAplikacja.qa.OdpowiedzUzytkownika;
 import quizAplikacja.qa.PytanieIOdpowiedz;
 
 class Menu {
@@ -19,7 +18,6 @@ class Menu {
         switch (menuId) {
             case (1):
                 new WlaczenieQuizu(wejscie).wlacznieQuizu(pytanieIOdpowiedzDao.wezLosowe());
-                new OdpowiedzUzytkownika(wejscie).sprawdzenieOdpowiedzi();
                 menuQuizu(pytanieIOdpowiedzDao);
                 break;
             case (2):

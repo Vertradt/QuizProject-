@@ -5,19 +5,31 @@ import quizAplikacja.qa.PytanieIOdpowiedz;
 
 class WlaczenieQuizu {
     private Wejscie wejscie;
+    private OdpowiedzUzytkownika odpowiedzUzytkownika;
 
-    WlaczenieQuizu(Wejscie wejscie) {
+    WlaczenieQuizu(Wejscie wejscie, OdpowiedzUzytkownika odpowiedzUzytkownika) {
         this.wejscie = wejscie;
+        this.odpowiedzUzytkownika = odpowiedzUzytkownika;
     }
 
     void wlacznieQuizu(PytanieIOdpowiedz pytanieIOdpowiedz) {
-        wejscie.getStringInput(); //TODO: Zostawiłem tutaj ten input i dodałem poniżej pętle, wcześniej była
-                                  // umieszczona bezpośrednio w klasie Menu, w pierwszyma casie. Nie wiem czy to dobre rozwiąznie
+        wejscie.getStringInput();
         while (true) {
-            new OdpowiedzUzytkownika(pytanieIOdpowiedz, wejscie).sprawdzenieOdpowiedzi(pytanieIOdpowiedz);
-            new LicznikPunktow(new OdpowiedzUzytkownika(pytanieIOdpowiedz, wejscie)).punkty();
+            odpowiedzUzytkownika.sprawdzenieOdpowiedzi();
+                System.out.println("Czy chcesz grać dalej?");
+                if (wejscie.getStringInput().equals("tak")) {
+                    odpowiedzUzytkownika.sprawdzenieOdpowiedzi();
+
+                }
+             else{
+                System.out.println("Powrót do menu");
+                   break;
+            }
         }
     }
+//            new LicznikPunktow(new OdpowiedzUzytkownika(pytanieIOdpowiedz, wejscie)).punkty();
+//        }
+
 
     @Override
     public String toString() {

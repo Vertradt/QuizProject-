@@ -1,7 +1,9 @@
 package quizAplikacja;
 
 import quizAplikacja.qa.Dao;
+import quizAplikacja.qa.OdpowiedzUzytkownika;
 import quizAplikacja.qa.PytanieIOdpowiedz;
+import quizAplikacja.qa.PytanieIOdpowiedzDao;
 
 class Menu {
     private Wejscie wejscie;
@@ -17,9 +19,10 @@ class Menu {
 
         switch (menuId) {
             case (1):
-                new WlaczenieQuizu(wejscie).wlacznieQuizu(pytanieIOdpowiedzDao.wezLosowe());
-                menuQuizu(pytanieIOdpowiedzDao);
-                break;
+                while (true) {
+                    new WlaczenieQuizu(wejscie, new OdpowiedzUzytkownika(new PytanieIOdpowiedzDao(), wejscie)).wlacznieQuizu(pytanieIOdpowiedzDao.wezLosowe());
+                    break;
+                }
             case (2):
                 new Punktacja().tablicaWynikow();
                 menuQuizu(pytanieIOdpowiedzDao);

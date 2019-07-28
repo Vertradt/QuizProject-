@@ -8,7 +8,7 @@ class Punktacja {
 //    }
 
     void tablicaWynikow() {
-        System.out.println("Tablica wyników");
+//        System.out.println("Tablica wyników");
 
 //        odpowiedzUzytkownika.sprawdzenieOdpowiedzi();
     }

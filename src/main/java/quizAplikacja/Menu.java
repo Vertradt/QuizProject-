@@ -21,8 +21,9 @@ class Menu {
             case (1):
                 while (true) {
                     new WlaczenieQuizu(wejscie, new OdpowiedzUzytkownika(new PytanieIOdpowiedzDao(), wejscie)).wlacznieQuizu(pytanieIOdpowiedzDao.wezLosowe());
-                    break;
+                break;
                 }
+
             case (2):
                 new Punktacja().tablicaWynikow();
                 menuQuizu(pytanieIOdpowiedzDao);

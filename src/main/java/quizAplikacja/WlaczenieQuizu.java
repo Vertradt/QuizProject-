@@ -15,16 +15,8 @@ class WlaczenieQuizu {
     void wlacznieQuizu(PytanieIOdpowiedz pytanieIOdpowiedz) {
         wejscie.getStringInput();
         while (true) {
-            odpowiedzUzytkownika.sprawdzenieOdpowiedzi();
-                System.out.println("Czy chcesz grać dalej?");
-                if (wejscie.getStringInput().equals("tak")) {
-                    odpowiedzUzytkownika.sprawdzenieOdpowiedzi();
-
-                }
-             else{
-                System.out.println("Powrót do menu");
-                   break;
-            }
+            odpowiedzUzytkownika.sprawdzenieOdpowiedzi(pytanieIOdpowiedz);
+            new Zapytania(wejscie).wyswietelenieZapytan();
         }
     }
 //            new LicznikPunktow(new OdpowiedzUzytkownika(pytanieIOdpowiedz, wejscie)).punkty();

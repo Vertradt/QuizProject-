@@ -16,7 +16,6 @@ class WlaczenieQuizu {
         wejscie.getStringInput();
         while (true) {
             odpowiedzUzytkownika.sprawdzenieOdpowiedzi(pytanieIOdpowiedz);
-            new Zapytania(wejscie).wyswietelenieZapytan();
         }
     }
 //            new LicznikPunktow(new OdpowiedzUzytkownika(pytanieIOdpowiedz, wejscie)).punkty();

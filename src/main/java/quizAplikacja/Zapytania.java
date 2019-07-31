@@ -4,11 +4,11 @@ import quizAplikacja.qa.PytanieIOdpowiedzDao;
 
 public class Zapytania {
     private Wejscie wejscie;
-//    private PytanieIOdpowiedzDao pytanieIOdpowiedzDao;
+    private PytanieIOdpowiedzDao pytanieIOdpowiedzDao;
 
-    public Zapytania(Wejscie wejscie) {
+    public Zapytania(Wejscie wejscie, PytanieIOdpowiedzDao pytanieIOdpowiedzDao) {
         this.wejscie = wejscie;
-//        this.pytanieIOdpowiedzDao = pytanieIOdpowiedzDao;
+        this.pytanieIOdpowiedzDao = pytanieIOdpowiedzDao;
     }
 
 

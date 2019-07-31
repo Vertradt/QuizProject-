@@ -2,6 +2,7 @@ package quizAplikacja.qa;
 
 import quizAplikacja.Komunikaty;
 import quizAplikacja.Wejscie;
+import quizAplikacja.Zapytania;
 
 public class OdpowiedzUzytkownika {
     private Wejscie wejscie;
@@ -25,7 +26,7 @@ public class OdpowiedzUzytkownika {
             new Komunikaty().wyswietlKomunikat("Zła odpowiedź. Wprowadź 'tak' lub 'nie'");
         }
 
-//        new Zapytania(wejscie).wyswietelenieZapytan();
+        new Zapytania(wejscie, pytanieIOdpowiedzDao).wyswietelenieZapytan();
 
     }
 

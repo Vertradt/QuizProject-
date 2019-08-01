@@ -19,7 +19,6 @@ public class OdpowiedzUzytkownika {
         String odpowiedz = wejscie.getStringInput();
         if (odpowiedz.equals("tak")) {
             new Komunikaty().wyswietlKomunikat("Poprawna odpowiedź");
-
         } else if (odpowiedz.equals("nie")) {
             new Komunikaty().wyswietlKomunikat("Błędna odpowiedź");
         } else {

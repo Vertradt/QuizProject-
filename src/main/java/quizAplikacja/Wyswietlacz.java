@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 class Wyswietlacz {
-    static void wyswietlacz() {
+    static void menu() {
 
         Map<Integer, String> pozycjeMenu = new HashMap<>();
         pozycjeMenu.put(1, "Włącznie Quizu");

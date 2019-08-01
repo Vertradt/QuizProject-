@@ -14,16 +14,17 @@ class Menu {
 
     void menuQuizu(Dao<PytanieIOdpowiedz> pytanieIOdpowiedzDao) {
         new Komunikaty().wyswietlKomunikat("Wybierz pozycje z menu Quizu");
-        Wyswietlacz.wyswietlacz();
+        Wyswietlacz.menu();
         int menuId = wejscie.getIntInput();
 
         switch (menuId) {
             case (1):
                 while (true) {
                     new WlaczenieQuizu(wejscie, new OdpowiedzUzytkownika(new PytanieIOdpowiedzDao(), wejscie)).wlacznieQuizu(pytanieIOdpowiedzDao.wezLosowe());
-                break;
+                    break;
                 }
-
+//                System.out.println("tutaj ");
+                break;
             case (2):
                 new Punktacja().tablicaWynikow();
                 menuQuizu(pytanieIOdpowiedzDao);

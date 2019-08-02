@@ -1,5 +1,6 @@
 package quizAplikacja;
 
+import quizAplikacja.qa.Dao;
 import quizAplikacja.qa.OdpowiedzUzytkownika;
 import quizAplikacja.qa.PytanieIOdpowiedz;
 
@@ -12,14 +13,15 @@ class WlaczenieQuizu {
         this.odpowiedzUzytkownika = odpowiedzUzytkownika;
     }
 
-    void wlacznieQuizu(PytanieIOdpowiedz pytanieIOdpowiedz) {
+    void uruchomQuiz(Dao<PytanieIOdpowiedz> pytanieIOdpowiedzDao) {
         wejscie.getStringInput();
-        while (true) {
-            odpowiedzUzytkownika.sprawdzenieOdpowiedzi(pytanieIOdpowiedz);
-        }
+        boolean rezultat;
+        do {
+            Wyswietlacz.losowePytanie(pytanieIOdpowiedzDao.wezLosowe());
+            Wyswietlacz.komunikat("Czy wiedziałeś o tym?");
+            rezultat = odpowiedzUzytkownika.sprawdzenieOdpowiedzi();
+        } while (rezultat);
     }
-//            new LicznikPunktow(new OdpowiedzUzytkownika(pytanieIOdpowiedz, wejscie)).punkty();
-//        }
 
 
     @Override

@@ -15,6 +15,6 @@ class Quiz {
     }
 
     void start() {
-        new Menu(new Wejscie(new Scanner(System.in))).menuQuizu(pytanieIOdpowiedzDao);
+        new Menu(new Wejscie(new Scanner(System.in))).uruchom(pytanieIOdpowiedzDao);
     }
 }

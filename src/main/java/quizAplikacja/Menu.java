@@ -3,38 +3,44 @@ package quizAplikacja;
 import quizAplikacja.qa.Dao;
 import quizAplikacja.qa.OdpowiedzUzytkownika;
 import quizAplikacja.qa.PytanieIOdpowiedz;
-import quizAplikacja.qa.PytanieIOdpowiedzDao;
 
 class Menu {
+    private static final int WLACZENIE_QUIZU = 1;
+    private static final int PUNKTACJA = 2;
+    private static final int WYLACZENIE_QUIZU = 3;
+
+
     private Wejscie wejscie;
 
     Menu(Wejscie wejscie) {
         this.wejscie = wejscie;
     }
 
-    void menuQuizu(Dao<PytanieIOdpowiedz> pytanieIOdpowiedzDao) {
+    void uruchom(Dao<PytanieIOdpowiedz> pytanieIOdpowiedzDao) {
         new Komunikaty().wyswietlKomunikat("Wybierz pozycje z menu Quizu");
         Wyswietlacz.menu();
         int menuId = wejscie.getIntInput();
 
         switch (menuId) {
-            case (1):
+            case WLACZENIE_QUIZU:
                 while (true) {
-                    new WlaczenieQuizu(wejscie, new OdpowiedzUzytkownika(new PytanieIOdpowiedzDao(), wejscie)).wlacznieQuizu(pytanieIOdpowiedzDao.wezLosowe());
+                    OdpowiedzUzytkownika odpowiedzUzytkownika = new OdpowiedzUzytkownika(wejscie);
+                    WlaczenieQuizu wlaczenieQuizu = new WlaczenieQuizu(wejscie, odpowiedzUzytkownika);
+                    wlaczenieQuizu.uruchomQuiz(pytanieIOdpowiedzDao);
+                    uruchom(pytanieIOdpowiedzDao);
                     break;
                 }
-//                System.out.println("tutaj ");
                 break;
-            case (2):
+            case PUNKTACJA:
                 new Punktacja().tablicaWynikow();
-                menuQuizu(pytanieIOdpowiedzDao);
+                uruchom(pytanieIOdpowiedzDao);
                 break;
-            case (3):
+            case WYLACZENIE_QUIZU:
                 new QuizStop().zakonczenieDzialaniaAplikacji();
                 break;
             default:
                 new Komunikaty().wyswietlKomunikat("Nie wybrano żadnej opcji");
-                menuQuizu(pytanieIOdpowiedzDao);
+                uruchom(pytanieIOdpowiedzDao);
         }
     }
 

@@ -1,9 +1,11 @@
 package quizAplikacja;
 
+import quizAplikacja.qa.PytanieIOdpowiedz;
+
 import java.util.HashMap;
 import java.util.Map;
 
-class Wyswietlacz {
+public class Wyswietlacz {
     static void menu() {
 
         Map<Integer, String> pozycjeMenu = new HashMap<>();
@@ -13,6 +15,15 @@ class Wyswietlacz {
         for (Map.Entry mapa : pozycjeMenu.entrySet()) {
             System.out.println(mapa.getKey() + " " + mapa.getValue());
         }
+    }
+
+
+    public static void komunikat(String komunikat) {
+        System.out.println(komunikat);
+    }
+
+    public static void losowePytanie(PytanieIOdpowiedz pytanie) {
+        System.out.println(pytanie);
     }
 
 }

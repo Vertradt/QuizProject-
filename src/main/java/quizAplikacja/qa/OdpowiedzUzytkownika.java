@@ -1,40 +1,30 @@
 package quizAplikacja.qa;
 
-import quizAplikacja.Komunikaty;
 import quizAplikacja.Wejscie;
-import quizAplikacja.Zapytania;
+import quizAplikacja.Wyswietlacz;
+import quizAplikacja.ZagrajPonowniePytacz;
 
 public class OdpowiedzUzytkownika {
     private Wejscie wejscie;
-    private PytanieIOdpowiedzDao pytanieIOdpowiedzDao;
 
-    public OdpowiedzUzytkownika(PytanieIOdpowiedzDao pytanieIOdpowiedzDao, Wejscie wejscie) {
-        this.pytanieIOdpowiedzDao = pytanieIOdpowiedzDao;
+    public OdpowiedzUzytkownika(Wejscie wejscie) {
         this.wejscie = wejscie;
     }
 
-    public void sprawdzenieOdpowiedzi(PytanieIOdpowiedz pytanieIOdpowiedz) {
-        System.out.println(pytanieIOdpowiedzDao.wezLosowe());
-        new Komunikaty().wyswietlKomunikat("Czy wiedziałeś o tym?");
+    public boolean sprawdzenieOdpowiedzi() {
         String odpowiedz = wejscie.getStringInput();
-        if (odpowiedz.equals("tak")) {
-            new Komunikaty().wyswietlKomunikat("Poprawna odpowiedź");
-        } else if (odpowiedz.equals("nie")) {
-            new Komunikaty().wyswietlKomunikat("Błędna odpowiedź");
-        } else {
-            new Komunikaty().wyswietlKomunikat("Zła odpowiedź. Wprowadź 'tak' lub 'nie'");
+        switch (odpowiedz) {
+            case "tak":
+                Wyswietlacz.komunikat("Poprawna odpowiedź");
+                break;
+            case "nie":
+                Wyswietlacz.komunikat("Błędna odpowiedź");
+                break;
+            default:
+                Wyswietlacz.komunikat("Zła odpowiedź. Wprowadź \"tak\" lub \"nie\"");
+
         }
-
-        new Zapytania(wejscie, pytanieIOdpowiedzDao).wyswietelenieZapytan();
-
+        boolean czyGracDalej = new ZagrajPonowniePytacz(wejscie).zapytaj();
+        return czyGracDalej;
     }
-
-//    @Override
-//    public String toString() {
-//        final StringBuilder sb = new StringBuilder("OdpowiedzUzytkownika{");
-//        sb.append("wejscie=").append(wejscie);
-//        sb.append(", pytanieIOdpowiedzDao=").append(pytanieIOdpowiedzDao);
-//        sb.append('}');
-//        return sb.toString();
-//    }
 }

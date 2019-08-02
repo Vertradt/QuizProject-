@@ -1,7 +1,7 @@
 package quizAplikacja.qa;
 
+import quizAplikacja.SprawdzaczWejscia;
 import quizAplikacja.Wejscie;
-import quizAplikacja.Wyswietlacz;
 import quizAplikacja.ZagrajPonowniePytacz;
 
 public class OdpowiedzUzytkownika {
@@ -12,18 +12,7 @@ public class OdpowiedzUzytkownika {
     }
 
     public boolean sprawdzenieOdpowiedzi() {
-        String odpowiedz = wejscie.getStringInput();
-        switch (odpowiedz) {
-            case "tak":
-                Wyswietlacz.komunikat("Poprawna odpowiedź");
-                break;
-            case "nie":
-                Wyswietlacz.komunikat("Błędna odpowiedź");
-                break;
-            default:
-                Wyswietlacz.komunikat("Zła odpowiedź. Wprowadź \"tak\" lub \"nie\"");
-
-        }
+        new SprawdzaczWejscia(wejscie).waliduj("Poprawna odpowiedź", "Niepoprawna odpowiedź");
         boolean czyGracDalej = new ZagrajPonowniePytacz(wejscie).zapytaj();
         return czyGracDalej;
     }

@@ -7,20 +7,26 @@ import quizAplikacja.qa.PytanieIOdpowiedz;
 class WlaczenieQuizu {
     private Wejscie wejscie;
     private OdpowiedzUzytkownika odpowiedzUzytkownika;
+    private Punktacja punktacja;
 
-    WlaczenieQuizu(Wejscie wejscie, OdpowiedzUzytkownika odpowiedzUzytkownika) {
+    WlaczenieQuizu(Wejscie wejscie, OdpowiedzUzytkownika odpowiedzUzytkownika, Punktacja punktacja) {
         this.wejscie = wejscie;
         this.odpowiedzUzytkownika = odpowiedzUzytkownika;
+        this.punktacja = punktacja;
     }
 
     void uruchomQuiz(Dao<PytanieIOdpowiedz> pytanieIOdpowiedzDao) {
         wejscie.getStringInput();
         boolean rezultat;
+        Wynik wynik = new Wynik(0, null);
+
         do {
             Wyswietlacz.losowePytanie(pytanieIOdpowiedzDao.wezLosowe());
             Wyswietlacz.komunikat("Czy wiedziałeś o tym?");
-            rezultat = odpowiedzUzytkownika.sprawdzenieOdpowiedzi();
+            rezultat = odpowiedzUzytkownika.sprawdzenieOdpowiedzi(wynik);
         } while (rezultat);
+        new PodawaczImienia(wejscie, wynik).podajImie();
+        Wyswietlacz.wyswietlenieSumyPunktow(wynik, punktacja, wynik.getImie());
     }
 
 

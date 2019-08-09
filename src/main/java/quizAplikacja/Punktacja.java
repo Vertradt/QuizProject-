@@ -1,17 +1,21 @@
 package quizAplikacja;
 
-class Punktacja {
-//    private OdpowiedzUzytkownika odpowiedzUzytkownika;
-//
-//    public Punktacja(OdpowiedzUzytkownika odpowiedzUzytkownika) {
-//        this.odpowiedzUzytkownika = odpowiedzUzytkownika;
-//    }
+import java.util.ArrayList;
+import java.util.List;
 
-    void tablicaWynikow() {
-//        System.out.println("Tablica wyników");
+final class Punktacja {
+    //TODO: Różnica COMPARATOR, a COMPARABLE
+    private final List<Wynik> wyniki;
 
-//        odpowiedzUzytkownika.sprawdzenieOdpowiedzi();
+    Punktacja() {
+        this.wyniki = new ArrayList<>();
     }
 
+    void dodajWynik(Wynik wynik) {
+        wyniki.add(wynik);
+    }
 
+    List<Wynik> zwrocWyniki() {
+        return wyniki;
+    }
 }

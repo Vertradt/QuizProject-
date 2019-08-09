@@ -5,7 +5,7 @@ import quizAplikacja.qa.PytanieIOdpowiedz;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Wyswietlacz {
+class Wyswietlacz {
     static void menu() {
 
         Map<Integer, String> pozycjeMenu = new HashMap<>();
@@ -18,12 +18,18 @@ public class Wyswietlacz {
     }
 
 
-    public static void komunikat(String komunikat) {
+    static void komunikat(String komunikat) {
         System.out.println(komunikat);
     }
 
-    public static void losowePytanie(PytanieIOdpowiedz pytanie) {
+    static void losowePytanie(PytanieIOdpowiedz pytanie) {
         System.out.println(pytanie);
+    }
+
+    static void wyswietlenieSumyPunktow(Wynik wynik, Punktacja punktacja, String imie) {
+        System.out.println(imie + ", " + "uzyskałeś punktów:" + " " + wynik.zwrocWszystkiePunkty());
+        punktacja.dodajWynik(wynik);
+        System.out.println("Powrót do menu!");
     }
 
 }

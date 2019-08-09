@@ -10,8 +10,10 @@ public class ZagrajPonowniePytacz {
 
     public boolean zapytaj() {
         Wyswietlacz.komunikat("Czy chcesz grać dalej?");
-//        SprawdzaczWejscia sprawdzaczWejscia = new SprawdzaczWejscia(wejscie);
-//        sprawdzaczWejscia.waliduj(wejscie.getStringInput().equals("tak"), "Wracamy do menu");
-        return wejscie.getStringInput().equals("tak");
+        SprawdzaczTakNie sprawdzaczWejscia = new SprawdzaczTakNie(wejscie);
+        boolean odpowiedz = sprawdzaczWejscia.waliduj(null, "Zaraz nastąpi powrót do menu, lecz najpierw...");
+//        new PodawaczImienia(wejscie).podajImie();
+
+        return odpowiedz;
     }
 }

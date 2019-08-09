@@ -11,9 +11,11 @@ class Menu {
 
 
     private Wejscie wejscie;
+    private Punktacja punktacja;
 
-    Menu(Wejscie wejscie) {
+    Menu(Wejscie wejscie, Punktacja punktacja) {
         this.wejscie = wejscie;
+        this.punktacja = punktacja;
     }
 
     void uruchom(Dao<PytanieIOdpowiedz> pytanieIOdpowiedzDao) {
@@ -23,16 +25,13 @@ class Menu {
 
         switch (menuId) {
             case WLACZENIE_QUIZU:
-                while (true) {
-                    OdpowiedzUzytkownika odpowiedzUzytkownika = new OdpowiedzUzytkownika(wejscie);
-                    WlaczenieQuizu wlaczenieQuizu = new WlaczenieQuizu(wejscie, odpowiedzUzytkownika);
-                    wlaczenieQuizu.uruchomQuiz(pytanieIOdpowiedzDao);
-                    uruchom(pytanieIOdpowiedzDao);
-                    break;
-                }
+                OdpowiedzUzytkownika odpowiedzUzytkownika = new OdpowiedzUzytkownika(wejscie);
+                WlaczenieQuizu wlaczenieQuizu = new WlaczenieQuizu(wejscie, odpowiedzUzytkownika,punktacja);
+                wlaczenieQuizu.uruchomQuiz(pytanieIOdpowiedzDao);
+                uruchom(pytanieIOdpowiedzDao);
                 break;
             case PUNKTACJA:
-                new Punktacja().tablicaWynikow();
+                System.out.println(punktacja.zwrocWyniki());
                 uruchom(pytanieIOdpowiedzDao);
                 break;
             case WYLACZENIE_QUIZU:

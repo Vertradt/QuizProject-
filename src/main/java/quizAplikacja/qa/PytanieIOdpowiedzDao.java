@@ -43,7 +43,6 @@ public class PytanieIOdpowiedzDao implements Dao<PytanieIOdpowiedz> {
         pytaniaIOdpowiedzi.add(new PytanieIOdpowiedz(17, new Pytanie("Czy Object[], List, Set, Map i Queue to rodzaje kolekcji w Javie"), new Odpowiedź("Tak")));
         pytaniaIOdpowiedzi.add(new PytanieIOdpowiedz(18, new Pytanie("Czy w Javie, w przypadku klas, występuje dziedziczenie wielokrotne?"), new Odpowiedź("Nie")));
         pytaniaIOdpowiedzi.add(new PytanieIOdpowiedz(19, new Pytanie("Czy interfejsy w Javie mogą po sobie dziedziczyć wielokrotnie?"), new Odpowiedź("Tak")));
-        pytaniaIOdpowiedzi.add(new PytanieIOdpowiedz(18, new Pytanie("Pytanie2"), new Odpowiedź("Odpowiedź2")));
         return pytaniaIOdpowiedzi;
     }
 

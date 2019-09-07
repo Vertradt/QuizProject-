@@ -16,6 +16,8 @@ final class Punktacja {
     }
 
     List<Wynik> zwrocWyniki() {
+
         return wyniki;
     }
+
 }

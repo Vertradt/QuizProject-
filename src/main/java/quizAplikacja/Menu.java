@@ -26,12 +26,13 @@ class Menu {
         switch (menuId) {
             case WLACZENIE_QUIZU:
                 OdpowiedzUzytkownika odpowiedzUzytkownika = new OdpowiedzUzytkownika(wejscie);
-                WlaczenieQuizu wlaczenieQuizu = new WlaczenieQuizu(wejscie, odpowiedzUzytkownika,punktacja);
+                WlaczenieQuizu wlaczenieQuizu = new WlaczenieQuizu(wejscie, odpowiedzUzytkownika, punktacja);
                 wlaczenieQuizu.uruchomQuiz(pytanieIOdpowiedzDao);
                 uruchom(pytanieIOdpowiedzDao);
                 break;
             case PUNKTACJA:
-                System.out.println(punktacja.zwrocWyniki());
+                Wyswietlacz.wyswietlanieTablicyWynikow(punktacja.zwrocWyniki());
+                System.out.println("dupa");
                 uruchom(pytanieIOdpowiedzDao);
                 break;
             case WYLACZENIE_QUIZU:

@@ -18,10 +18,6 @@ public class OdpowiedzUzytkownika {
         if (czyPoprawna) {
             wynik.dodajPunkt();
             System.out.println(wynik.zwrocWszystkiePunkty());
-            //TODO Dodać funkcjonalność odpowiadającą za dodadanie imienia w momencie rezygancji z dalszej gry
-            //TODO Podaj imię i wyświetl wynik przed wyjściem do menu
-
-            //TODO Dodaj wynik do punktachi (punktacja.dodajWynik(wynik))
         }
 
         boolean czyGracDalej = new ZagrajPonowniePytacz(wejscie).zapytaj();

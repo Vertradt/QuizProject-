@@ -5,15 +5,15 @@ import java.util.Scanner;
 public class Wejscie {
     private Scanner scanner;
 
-    public Wejscie(Scanner scanner) {
+    Wejscie(Scanner scanner) {
         this.scanner = scanner;
     }
 
-    public int getIntInput() {
+    int getIntInput() {
         return scanner.nextInt();
     }
 
-     public String getStringInput() {
+    String getStringInput() {
         return scanner.nextLine();
     }
 

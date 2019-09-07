@@ -1,8 +1,8 @@
 package quizAplikacja.qa;
 
-public class Odpowiedź {
+public class Odpowiedz {
     private String tresc;
-     Odpowiedź(String tresc) {
+     Odpowiedz(String tresc) {
         this.tresc = tresc;
 
 

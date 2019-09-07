@@ -10,12 +10,7 @@ public final class Wynik {
         this.imie = imie;
     }
 
-    public String getImie() {
-        return imie;
-    }
-
-    //TODO: nadaj imie podajImie i do imienia muszę nadać (setImie)
-    public void setImie(String imie) {
+    void setImie(String imie) {
         this.imie = imie;
     }
 
@@ -28,8 +23,16 @@ public final class Wynik {
 
     }
 
-    public String zwrocWszystkieImiona() {
+    String zwrocWszystkieImiona() {
         return imie;
     }
 
+    public String getImie() {
+        return imie;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s | %spkt", imie, punkty );
+    }
 }

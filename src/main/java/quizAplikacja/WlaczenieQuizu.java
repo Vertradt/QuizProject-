@@ -25,8 +25,14 @@ class WlaczenieQuizu {
             Wyswietlacz.komunikat("Czy wiedziałeś o tym?");
             rezultat = odpowiedzUzytkownika.sprawdzenieOdpowiedzi(wynik);
         } while (rezultat);
-        new PodawaczImienia(wejscie, wynik).podajImie();
-        Wyswietlacz.wyswietlenieSumyPunktow(wynik, punktacja, wynik.getImie());
+
+        Wyswietlacz.komunikat("Podaj swoje imię");
+        wynik.setImie(wejscie.getStringInput());
+        Wyswietlacz.wyswietlenieImieniaIPunktow(wynik.zwrocWszystkieImiona(),wynik.zwrocWszystkiePunkty());
+
+        punktacja.dodajWynik(wynik);
+
+
     }
 
 

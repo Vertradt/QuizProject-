@@ -3,6 +3,7 @@ package quizAplikacja;
 import quizAplikacja.qa.PytanieIOdpowiedz;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 class Wyswietlacz {
@@ -17,7 +18,6 @@ class Wyswietlacz {
         }
     }
 
-
     static void komunikat(String komunikat) {
         System.out.println(komunikat);
     }
@@ -26,10 +26,17 @@ class Wyswietlacz {
         System.out.println(pytanie);
     }
 
-    static void wyswietlenieSumyPunktow(Wynik wynik, Punktacja punktacja, String imie) {
-        System.out.println(imie + ", " + "uzyskałeś punktów:" + " " + wynik.zwrocWszystkiePunkty());
-        punktacja.dodajWynik(wynik);
+    static void wyswietlenieImieniaIPunktow(String imie, int punkty) {
+        System.out.println(imie + ", " + "uzyskałeś punktów" + " " + punkty);
         System.out.println("Powrót do menu!");
+    }
+
+    static void wyswietlanieTablicyWynikow(List<Wynik> wyniki) {
+        for (Wynik wynik : wyniki) {
+            //TODO: Wstawienie indeksu dla każdego z wyników
+            System.out.println(wynik);
+        }
+//        ZJsonaDoListy.forEach(System.out::println);
     }
 
 }

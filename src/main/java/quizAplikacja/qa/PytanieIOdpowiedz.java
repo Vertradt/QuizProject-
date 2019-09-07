@@ -4,9 +4,9 @@ public class PytanieIOdpowiedz {
 
     private int id;
     private Pytanie pytanie;
-    private Odpowiedź odpowiedź;
+    private Odpowiedz odpowiedź;
 
-    public PytanieIOdpowiedz(int id, Pytanie pytanie, Odpowiedź odpowiedź) {
+    public PytanieIOdpowiedz(int id, Pytanie pytanie, Odpowiedz odpowiedź) {
         this.id = id;
         this.pytanie = pytanie;
         this.odpowiedź = odpowiedź;

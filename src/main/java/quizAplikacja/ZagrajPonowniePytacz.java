@@ -12,7 +12,6 @@ public class ZagrajPonowniePytacz {
         Wyswietlacz.komunikat("Czy chcesz grać dalej?");
         SprawdzaczTakNie sprawdzaczWejscia = new SprawdzaczTakNie(wejscie);
         boolean odpowiedz = sprawdzaczWejscia.waliduj(null, "Zaraz nastąpi powrót do menu, lecz najpierw...");
-//        new PodawaczImienia(wejscie).podajImie();
 
         return odpowiedz;
     }

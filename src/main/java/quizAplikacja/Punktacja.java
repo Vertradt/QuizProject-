@@ -16,7 +16,7 @@ final class Punktacja {
     }
 
     List<Wynik> zwrocWyniki() {
-
+//        System.out.println(wyniki);
         return wyniki;
     }
 

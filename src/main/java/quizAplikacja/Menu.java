@@ -32,11 +32,12 @@ class Menu {
                 break;
             case PUNKTACJA:
                 Wyswietlacz.wyswietlanieTablicyWynikow(punktacja.zwrocWyniki());
-                System.out.println("dupa");
+
                 uruchom(pytanieIOdpowiedzDao);
                 break;
             case WYLACZENIE_QUIZU:
                 new QuizStop().zakonczenieDzialaniaAplikacji();
+                new KonwersjaJson(punktacja).konwertujDoJson();
                 break;
             default:
                 new Komunikaty().wyswietlKomunikat("Nie wybrano żadnej opcji");

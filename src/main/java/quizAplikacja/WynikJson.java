@@ -15,8 +15,10 @@ public class WynikJson {
         System.out.println(s);
         return gson.toJson(wyniki);
     }
-    public List<Wynik> ZJsonaDoListy(String wynikJson){
-        Type listType = new TypeToken<ArrayList<Wynik>>(){}.getType();
+
+    public List<Wynik> ZJsonaDoListy(String wynikJson) {
+        Type listType = new TypeToken<ArrayList<Wynik>>() {
+        }.getType();
         return gson.fromJson(wynikJson, listType);
     }
 

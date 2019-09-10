@@ -3,7 +3,7 @@ package quizAplikacja;
 import java.util.ArrayList;
 import java.util.List;
 
-public class KonwersjaDoCSV {
+public class KonwersjeCSV {
 
 
     void doCSV(List<Wynik> wyniki) {

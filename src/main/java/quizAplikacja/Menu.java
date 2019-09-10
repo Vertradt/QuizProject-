@@ -37,7 +37,7 @@ class Menu {
                 break;
             case WYLACZENIE_QUIZU:
                 new QuizStop().zakonczenieDzialaniaAplikacji();
-                new KonwersjaJson(punktacja).konwertujDoJson();
+                new KonwersjeJson(punktacja).konwertujDoJson();
                 break;
             default:
                 new Komunikaty().wyswietlKomunikat("Nie wybrano żadnej opcji");

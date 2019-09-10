@@ -2,10 +2,10 @@ package quizAplikacja;
 
 import java.util.List;
 
-class KonwersjaJson {
+class KonwersjeJson {
     private Punktacja punktacja;
 
-    public KonwersjaJson(Punktacja punktacja) {
+    public KonwersjeJson(Punktacja punktacja) {
         this.punktacja = punktacja;
     }
 
@@ -14,7 +14,7 @@ class KonwersjaJson {
         List<Wynik> wyniki = punktacja.zwrocWyniki();
         wynikJson.konwertsjaDoJsona(wyniki);
         kowersjaZJsonDoListy(wynikJson, wyniki);
-        new KonwersjaDoCSV().doCSV(wyniki);
+        new KonwersjeCSV().doCSV(wyniki);
     }
 
     private void kowersjaZJsonDoListy(WynikJson wynikJson, List<Wynik> wyniki) {

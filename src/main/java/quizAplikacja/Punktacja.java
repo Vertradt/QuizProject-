@@ -15,8 +15,9 @@ final class Punktacja {
         wyniki.add(wynik);
     }
 
-    List<Wynik> zwrocWyniki() {
-//        System.out.println(wyniki);
+    List<Wynik> zwrocWynikiPosortowane() {
+        SortowanieWynikow sortowanieWynikow = new SortowanieWynikow(wyniki);
+        sortowanieWynikow.sortujBombelkowo();
         return wyniki;
     }
 

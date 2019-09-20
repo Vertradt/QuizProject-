@@ -32,12 +32,12 @@ class Wyswietlacz {
     }
 
     static void wyswietlanieTablicyWynikow(List<Wynik> wyniki) {
+        System.out.println("Lista najlepszych wyników:");
+        int j = 0;
         for (Wynik wynik : wyniki) {
-            //TODO: Wstawienie indeksu dla każdego z wyników
-            System.out.println(wynik);
+            System.out.println(j + 1 + ". " + wynik);
+            j++;
         }
-//        ZJsonaDoListy.forEach(System.out::println);
     }
-
 }
 

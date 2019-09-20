@@ -31,8 +31,7 @@ class Menu {
                 uruchom(pytanieIOdpowiedzDao);
                 break;
             case PUNKTACJA:
-                Wyswietlacz.wyswietlanieTablicyWynikow(punktacja.zwrocWyniki());
-
+                Wyswietlacz.wyswietlanieTablicyWynikow(punktacja.zwrocWynikiPosortowane());
                 uruchom(pytanieIOdpowiedzDao);
                 break;
             case WYLACZENIE_QUIZU:

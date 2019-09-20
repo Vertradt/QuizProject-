@@ -5,15 +5,19 @@ import java.util.List;
 class KonwersjeJson {
     private Punktacja punktacja;
 
-    public KonwersjeJson(Punktacja punktacja) {
+    KonwersjeJson(Punktacja punktacja) {
         this.punktacja = punktacja;
     }
 
     void konwertujDoJson() {
         WynikJson wynikJson = new WynikJson();
-        List<Wynik> wyniki = punktacja.zwrocWyniki();
-        wynikJson.konwertsjaDoJsona(wyniki);
+        List<Wynik> wyniki = punktacja.zwrocWynikiPosortowane();
+        String wynikiJson = wynikJson.konwertsjaDoJsona(wyniki);
         kowersjaZJsonDoListy(wynikJson, wyniki);
+        Archiwizacja archiwizacja = new Archiwizacja();
+        archiwizacja.zapisDoPliku( wynikiJson, ".json");
+        archiwizacja.odczytZPliku("plik Json", ".json");
+
         new KonwersjeCSV().doCSV(wyniki);
     }
 

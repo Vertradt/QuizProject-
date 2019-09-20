@@ -35,4 +35,8 @@ public final class Wynik {
     public String toString() {
         return String.format("%s | %spkt", imie, punkty );
     }
+
+    public int getPunkty() {
+        return punkty;
+    }
 }

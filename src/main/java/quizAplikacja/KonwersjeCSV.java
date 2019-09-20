@@ -3,7 +3,7 @@ package quizAplikacja;
 import java.util.ArrayList;
 import java.util.List;
 
-public class KonwersjeCSV {
+class KonwersjeCSV {
 
 
     void doCSV(List<Wynik> wyniki) {
@@ -12,7 +12,11 @@ public class KonwersjeCSV {
             sb.append(wynik1.getImie()).append(",").append(wynik1.zwrocWszystkiePunkty()).append(",\n");
         }
         String CSV = sb.toString();
-        System.out.println(CSV.replace("|", ","));
+        CSV = CSV.replace("|", ",");
+        System.out.println(CSV);
+        Archiwizacja archiwizacja = new Archiwizacja();
+        archiwizacja.zapisDoPliku(CSV, ".csv");
+        archiwizacja.odczytZPliku("plik CSV", ".csv");
         zCsvDoListy(CSV);
     }
 
@@ -31,7 +35,6 @@ public class KonwersjeCSV {
             System.out.println(wynik1);
         }
         System.out.println(wyniki2.size());
-
     }
 }
 
